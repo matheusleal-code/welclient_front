@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script defer src="./js/script.js"></script>
+
+  <title>Wel.Client</title>
+</head>
+
+<body>
+  <header>
+    <h1>Wel.Client</h1>
+  </header>
+  <main id="container">
+    <div class="modal-overlay">
+      <!-- modal start -->
+      <div class="modal">
+        <div id="form">
+          <h2>Novo Cliente</h2>
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label class="sr-only" for="name">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Nome Completo" />
+            </div>
+            <div class="input-group">
+              <label class="sr-only" for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="ex: seunome@exemplo.com" />
+            </div>
+            <div class="input-two">
+              <div class="input-group">
+                <label class="sr-only" for="cpforcnpj">CPF ou CNPJ</label>
+                <input type="number" id="cpforcnpj" name="cpforcnpj" placeholder="CPF ou CNPJ" />
+              </div>
+              <div class="input-group">
+                <label class="sr-only" for="tel">Telefone</label>
+                <input type="number" id="tel" name="tel" placeholder="Telefone/Celular" />
+              </div>
+            </div>
+            <div class="input-address">
+              <div class="input-group">
+                <div class="input-group">
+                  <label class="sr-only" for="address">Logradouro</label>
+                  <input type="text" id="address" name="address" placeholder="Logradouro" />
+                </div>
+              </div>
+              <div class="input-three">
+                <div class="input-group">
+                  <label class="sr-only" for="number">Número</label>
+                  <input type="number" id="number" name="number" placeholder="Número" />
+                </div>
+                <div class="input-group">
+                  <label class="sr-only" for="cep">CEP</label>
+                  <input type="number" id="cep" name="cep" placeholder="CEP" />
+                </div>
+                <div class="input-group">
+                  <label class="sr-only" for="district">Bairro</label>
+                  <input type="text" id="district" name="district" placeholder="Bairro" />
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="sr-only" for="city">Cidade</label>
+                <input type="text" id="city" name="city" placeholder="Cidade" />
+              </div>
+              <div class="input-group">
+                <label class="sr-only" for="uf">UF</label>
+                <input maxlength="2" id="uf" name="uf" placeholder="UF" />
+              </div>
+            </div>
+            <div class="input-group actions">
+              <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+              <button type="submit">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> <!-- modal end -->
+
+    <!-- client header start -->
+    <section>
+      <div class="client">
+        <div class="client-header">
+          <h2>Clientes</h2>
+          <div class="actions-header">
+            <button data-tooltip="Novo Cliente" onclick="Modal.open()"><i class="fa fa-plus"></i></button>
+            <button data-tooltip="Listar Clientes" id="btn-list" onclick="List.show()"><i
+                class="fa fa-list"></i></button>
+          </div>
+        </div>
+        <div class="search-container">
+          <form action="" id="search-bar" onsubmit="Search.submit(event)">
+            <label for="search" class="sr-only">Pesquisar Cliente pelo CPF ou CNPJ</label>
+            <input type="text" id="search" name="search" placeholder="Pesquisar Cliente pelo CPF ou CNPJ">
+            <button data-tooltip="Pesquisar" type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="notification-container">
+      </div>
+
+    </section><!-- client header end -->
+
+    <!-- main start -->
+    <section>
+      <div id="client-container">
+        <div class="client-main">
+          <section id="clients">
+            <div class="box">
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </section><!-- Main end -->
+
+  </main>
+
+  <footer>
+    <!-- footer start -->
+    <p>wel.client LTDA ©</p>
+  </footer> <!-- footer end -->
+
+</body>
+
+</html>
